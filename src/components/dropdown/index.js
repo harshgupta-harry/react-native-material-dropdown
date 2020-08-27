@@ -281,7 +281,8 @@ export default class Dropdown extends PureComponent {
       let top = y
         + dropdownOffset.top
         - itemPadding;
-      Keyboard.dismiss();
+      //setTimeout(()=> Keyboard.dismiss(), 5000);
+      setTimeout(()=>
       this.setState({
         modal: true,
         width: right - left,
@@ -290,8 +291,8 @@ export default class Dropdown extends PureComponent {
         leftInset,
         rightInset,
         selected,
-      });
-
+      }), 5000
+      )
       setTimeout((() => {
         if (this.mounted) {
           this.resetScrollOffset();
