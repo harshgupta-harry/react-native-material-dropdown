@@ -11,6 +11,7 @@ import {
   Platform,
   ViewPropTypes,
   I18nManager,
+  Keyboard
 } from 'react-native';
 import Ripple from 'react-native-material-ripple';
 import { TextField } from 'react-native-material-textfield';
@@ -280,7 +281,7 @@ export default class Dropdown extends PureComponent {
       let top = y
         + dropdownOffset.top
         - itemPadding;
-
+      Keyboard.dismiss();
       this.setState({
         modal: true,
         width: right - left,
